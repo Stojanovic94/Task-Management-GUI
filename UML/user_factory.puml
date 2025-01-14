@@ -1,0 +1,50 @@
+@startuml users
+
+' Apstraktna klasa User
+abstract class User {
+    + String name
+    + String role
+    + void showPrivileges()
+}
+
+' Konkretné klase korisnika
+class AdminUser {
+    + void showPrivileges()
+}
+
+class ModeratorUser {
+    + void showPrivileges()
+}
+
+class RegularUser {
+    + void showPrivileges()
+}
+
+' Apstraktna fabrika
+abstract class UserFactory {
+    + User createUser() : User
+}
+
+' Konkretné fabrike
+class AdminUserFactory {
+    + User createUser() : User
+}
+
+class ModeratorUserFactory {
+    + User createUser() : User
+}
+
+class RegularUserFactory {
+    + User createUser() : User
+}
+
+' Relacije
+User <|-- AdminUser
+User <|-- ModeratorUser
+User <|-- RegularUser
+
+UserFactory <|-- AdminUserFactory
+UserFactory <|-- ModeratorUserFactory
+UserFactory <|-- RegularUserFactory
+
+@enduml
