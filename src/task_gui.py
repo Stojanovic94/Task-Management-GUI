@@ -9,7 +9,7 @@ class TaskGUI:
         self.taskManager = taskManager
         self.root.title("Task Manager")
         
-        # Dugmadi
+        # Dugmici za nas lep interfejs
         self.addButton = tk.Button(root, text="Dodaj zadatak", command=self.addTask)
         self.addButton.pack(pady=5)
 
